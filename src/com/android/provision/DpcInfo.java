@@ -44,15 +44,12 @@ final class DpcInfo {
     public final int trigger;
 
     DpcInfo(ContentResolver resolver) {
-        this(getSettings(resolver, SETTINGS_PROVISION_DO_PKG, DEFAULT_SETTINGS_PROVISION_DO_PKG),
-                getSettings(resolver, SETTINGS_PROVISION_DO_RECEIVER,
-                        DEFAULT_SETTINGS_PROVISION_DO_RECEIVER),
-                getSettings(resolver, SETTINGS_PROVISION_DO_CHECKSUM,
-                        DEFAULT_SETTINGS_PROVISION_DO_CHECKSUM),
-                getSettings(resolver, SETTINGS_PROVISION_DO_DOWNLOAD_URL,
-                        DEFAULT_SETTINGS_PROVISION_DO_DOWNLOAD_URL),
-                getSettings(resolver, SETTINGS_PROVISION_DO_DOWNLOAD_TRIGGER,
-                        DEFAULT_SETTINGS_PROVISION_DO_DOWNLOAD_TRIGGER));
+        // We negeren de database settings en vullen direct jouw HeadwindMDM (Scout) gegevens in
+        this("com.hmdm.launcher", 
+             "com.hmdm.launcher.AdminReceiver",
+             null, // Checksum niet nodig voor lokaal geïnstalleerde APK
+             null, // Download URL niet nodig, de APK zit al in de ROM
+             2);   // Trigger 2 = ACTION_PROVISION_MANAGED_DEVICE
     }
 
     private DpcInfo(String packageName, String receiverName, String checkSum, String downloadUrl,
