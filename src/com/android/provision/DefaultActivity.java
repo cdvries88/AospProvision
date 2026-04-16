@@ -81,14 +81,19 @@ public class DefaultActivity extends Activity {
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
+        // LOGICA AANPASSING: Forceer Headwind MDM Provisioning direct
+        Log.i(TAG, "Forcing Headwind MDM Device Owner Provisioning...");
+        provisionDeviceOwner();
+        
+        /* Oude check uitschakelen:
         boolean provisionDeviceOwner = getSettings(getContentResolver(), SETTINGS_PROVISION_DO_MODE,
                 DEFAULT_SETTINGS_PROVISION_DO_MODE) == 1;
-
         if (provisionDeviceOwner) {
             provisionDeviceOwner();
             return;
         }
         finishSetup();
+        */
     }
 
     private void finishSetup() {
