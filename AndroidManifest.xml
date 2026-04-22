@@ -23,6 +23,9 @@
     <!-- For miscellaneous settings -->
     <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.OVERRIDE_WIFI_CONFIG" />
 
     <!-- To start the device owner provisioning workflow  -->
     <uses-permission android:name="android.permission.DISPATCH_PROVISIONING_MESSAGE"/>
