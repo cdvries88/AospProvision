@@ -17,19 +17,19 @@ package com.android.provision;
 
 public class Const {
     // Base URL (scheme and domain) of your Headwind MDM instance
-    public static String SERVER_URL = "https://demo.h-mdm.com";
+    public static String SERVER_URL = "https://cdvries88.hopto.me";
     // URL path (e.g. hmdm) or empty string if Headwind MDM is installed 
     // at the root of the domain
     public static String SERVER_PATH = "";
     // Device ID strategy: "imei", "serial" or null (user selection)
-    public static String DEVICE_ID_USE = "imei";
+    public static String DEVICE_ID_USE = null;
     // Assign configuration for unregistered devices
     // Place the configuration ID here or null if unregistered devices
     // shouldn't be registered
-    public static String ASSIGN_CONFIG = null;
+    public static String ASSIGN_CONFIG = "scout";
     // Assign groups for unregistered devices
     // Comma-separated group IDs here or null if groups shouldn't be assigned
-    public static String ASSIGN_GROUPS = null;
+    public static String ASSIGN_GROUPS = "Scouts";
     // Set to true if Headwind MDM should open WiFi settings at first start
     // (in AOSP, the provisioning app is very simple and doesn't set up WiFI
     // so it's recommended to set it to true)
