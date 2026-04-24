@@ -36,9 +36,11 @@
     <application>
         <activity android:name="DefaultActivity"
              android:excludeFromRecents="true"
-             android:exported="true">
-            <intent-filter android:priority="1">
+             android:exported="true"
+             android:launchMode="singleTask">
+            <intent-filter android:priority="1000">
                 <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.DEVICE_INITIALIZATION_WIZARD" />
                 <category android:name="android.intent.category.HOME"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.SETUP_WIZARD"/>
